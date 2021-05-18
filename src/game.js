@@ -19,7 +19,6 @@ var config = {
 
 var player;
 var masks;
-var bombs;
 var platforms;
 var cursors;
 var score = 0;
