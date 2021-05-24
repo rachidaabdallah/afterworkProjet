@@ -28,21 +28,26 @@ var config = {
 };
 var game = new Phaser.Game(config);
 
-
 var player;
 var masks;
 var platforms;
 var cursors;
 var score = 0;
-var gameOver = false;
+var gameOver;
 var scoreText;
 var timerText;
 var winText;
 var timedEvent;
 var textGameOver;
 var timedEvent;
+var gameStarted;
+var finishedGame;
 
+function gameScene() {
+    this.score = 0;
+    this.gameOver = false;
 
+}
 
 function preload() {
     this.load.image('sky', '/assets/images/sky.png');
@@ -115,6 +120,8 @@ function create() {
 
     });
 
+    //player.health = 20;
+
     bombs = this.physics.add.group();
 
     scoreText = this.add.text(16, 16, '♻️ points : 0', { fontSize: '20px', fill: '#14213d' });
@@ -127,11 +134,15 @@ function create() {
     timerText = this.add.text(16, 48, '⏳ temps : 0 ', { fontSize: '20px', fill: '#14213d' });
     timedEvent = this.time.addEvent({ delay: 1000, callback: onEvent, callbackScope: this, loop: true });
 
-    textGameOver = this.add.text(game.config.width / 2, game.config.height / 2, 'GAME OVER', { fontSize: '32px', fill: '#fff' });
-    textGameOver.setDepth(1);
+    //textGameOver = this.add.text(game.config.width / 2, game.config.height / 2, 'GAME OVER', { fontSize: '32px', fill: '#fff' });
+    textGameOver = this.add.text(400, 320, 'Game Over!', { fontSize: '48px', fill: '#14213d' })
+    //this.textGameOver.setOrigin(0.5)
+    textGameOver.visible = false;
 
-    winText = this.add.text(game.config.width / 2, game.config.height / 2, 'You Win!', { fontSize: '32px', fill: '#fff' });
-    winText.setDepth(1);
+    //textGameOver.setDepth(1);
+
+    //winText = this.add.text(game.config.width / 2, game.config.height / 2, 'You Win!', { fontSize: '32px', fill: '#fff' });
+    //winText.setDepth(1);
 
 }
 
@@ -161,13 +172,6 @@ function update() {
 
     //timerText.setText('⏳ temps : ' + timedEvent.getProgress().toString().substr(2, 2));
 
-    if (score == 20) {
-        winText.Text.visible = true;
-        scoreText.Text.visible = false;
-        timerText.Text.visible = false;
-        textGameOver.Text.visible = false;
-    }
-
 }
 
 
@@ -177,6 +181,16 @@ function collectmask(player, mask) {
     score += 10;
     scoreText.setText('♻️ points : ' + score);
 
+    if (score == 110) {
+        this.textGameOver.visible = true;
+        winText.visible = true;
+        scoreText.visible = false;
+        timerText.visible = false;
+        player.setTint(0xff0000);
+        player.anims.play('turn');
+        this.gameOver = true;
+    }
+
     if (masks.countActive(true) === 0) {
         masks.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
@@ -185,6 +199,24 @@ function collectmask(player, mask) {
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
     }
+}
+
+function startGame() {
+    //introText.visible = false;
+    scoreText.visible = true;
+    //hitPointsText.visible = true;
+    gameStarted = true;
+    finishedGame = false;
+}
+
+// End the game
+function killGame() {
+    finishedGame = true;
+    player.setVelocity(0, 0);
+    //introText.visible = true;
+
+    scoreText.visible = false;
+    //hitPointsText.visible = false;
 }
 
 function onEvent() {
@@ -201,12 +233,11 @@ function formatTime(seconds) {
 
 function onEvent() {
     if (this.initialTime === 0) {
-        return "Game Over";
+        textGameOver.visible = true;
     }
 
     this.initialTime -= 1;
     timerText.setText('⏳ temps ' + formatTime(this.initialTime));
-
 
 }
 
