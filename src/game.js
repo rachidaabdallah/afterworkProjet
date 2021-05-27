@@ -130,7 +130,7 @@ function create() {
     this.physics.add.collider(masks, platforms);
     this.physics.add.overlap(player, masks, collectmask, null, this);
 
-    this.initialTime = 5;
+    this.initialTime = 0;
     timerText = this.add.text(16, 48, '⏳ temps : 0 ', { fontSize: '20px', fill: '#14213d' });
     timedEvent = this.time.addEvent({ delay: 1000, callback: onEvent, callbackScope: this, loop: true });
 
@@ -221,7 +221,6 @@ function killGame() {
 
 function onEvent() {
 
-
 }
 
 function formatTime(seconds) {
@@ -233,10 +232,11 @@ function formatTime(seconds) {
 
 function onEvent() {
     if (this.initialTime === 0) {
-        textGameOver.visible = true;
+        //timer.paused = false;
+        textGameOver.visible = false;
     }
 
-    this.initialTime -= 1;
+    this.initialTime += 1;
     timerText.setText('⏳ temps ' + formatTime(this.initialTime));
 
 }
