@@ -171,7 +171,6 @@ function update() {
     }
 
     //timerText.setText('⏳ temps : ' + timedEvent.getProgress().toString().substr(2, 2));
-
 }
 
 
