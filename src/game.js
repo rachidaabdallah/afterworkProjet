@@ -1,9 +1,7 @@
 
 var config = {
     type: Phaser.AUTO,
-    backgroundColor: '#fff',
-    //width: 1280,
-    //height: 720,
+    //backgroundColor: '#f1faee',
     physics: {
         default: 'arcade',
         arcade: {
@@ -12,19 +10,15 @@ var config = {
         }
     },
     scale: {
-        // Fit to window
-        //mode: Phaser.Scale.FIT,
-        // Center vertically and horizontally
-        //autoCenter: Phaser.Scale.CENTER_BOTH
+        mode: Phaser.Scale.FIT,
+        parent: 'phaser-example',
+        autoCenter: Phaser.Scale.CENTER_BOTH,
     },
-
     scene: {
         preload: preload,
         create: create,
         update: update
     },
-
-
 };
 var game = new Phaser.Game(config);
 
@@ -42,16 +36,23 @@ var textGameOver;
 var timedEvent;
 var gameStarted;
 var finishedGame;
+var dudito;
 
-function gameScene() {
+/*function gameScene() {
     this.score = 0;
     this.gameOver = false;
-
-}
+}*/
 
 function preload() {
-    this.load.image('sky', '/assets/images/sky.png');
+    this.load.image('sky', '/assets/images/sky1.png');
+    this.load.image('groundBase', '/assets/images/platform-base.png');
     this.load.image('ground', '/assets/images/platform.png');
+    this.load.image('platformAir', '/assets/images/platform-air.png');
+    this.load.image('mushroomRed', '/assets/images/mushroom_red.png');
+    this.load.image('mushroomBrown', '/assets/images/mushroom_brown.png');
+    this.load.image('pitillo', '/assets/images/pitillo.png');
+    this.load.image('mask1', '/assets/images/mask1.png');
+    this.load.image('sac', '/assets/images/sac.png');
     this.load.image('mask', '/assets/images/mask.png');
     this.load.spritesheet('dude', '/assets/images/dude.png',
         { frameWidth: 32, frameHeight: 48 });
@@ -62,19 +63,22 @@ function create() {
     this.add.image(500, 400, 'sky');
 
     platforms = this.physics.add.staticGroup();
-
-    platforms.create(100, 700, 'ground').setScale(1).refreshBody();
-    platforms.create(700, 700, 'ground').setScale(1).refreshBody();
-    platforms.create(220, 700, 'ground').setScale(1).refreshBody();
-    platforms.create(760, 700, 'ground').setScale(1).refreshBody();
-
-
+    platforms.create(700, 810, 'groundBase').setScale(1).refreshBody();
     platforms.create(550, 490, 'ground');
     platforms.create(50, 250, 'ground');
+    platforms.create(50, 500, 'platformAir');
     platforms.create(900, 220, 'ground');
+    platforms.create(900, 220, 'ground');
+    platforms.create(150, 680, 'mushroomRed');
+
 
     player = this.physics.add.sprite(200, 400, 'dude');
     player.setBounce(0.2);
+    player.setOrigin(0.5, 1);
+    player.setScale(1.5);
+    //player.play('idle');
+
+    
     //player.displayOriginX = 0;
     //player.displayOriginY = 0;
     //player.displayWidth = 42;
@@ -122,7 +126,7 @@ function create() {
 
     //player.health = 20;
 
-    bombs = this.physics.add.group();
+    //bombs = this.physics.add.group();
 
     scoreText = this.add.text(16, 16, '♻️ points : 0', { fontSize: '20px', fill: '#14213d' });
 
@@ -141,8 +145,16 @@ function create() {
 
     //textGameOver.setDepth(1);
 
-    //winText = this.add.text(game.config.width / 2, game.config.height / 2, 'You Win!', { fontSize: '32px', fill: '#fff' });
+    winText = this.add.text(400, 320, 'You Win!', { fontSize: '48px', fill: '#14213d' })
+    winText.visible = false;
     //winText.setDepth(1);
+//  Event handler for when the animation completes on our sprite
+
+this.physics.world.setBounds(0, 0, 4000, 1000);
+
+this.cameras.main.startFollow(player);
+
+this.cameras.main.setBounds(0, 0, 2000, 600);
 
 }
 
@@ -169,9 +181,6 @@ function update() {
     if (cursors.up.isDown && player.body.touching.down) {
         player.setVelocityY(-330);
     }
-
-    //timerText.setText('⏳ temps : ' + timedEvent.getProgress().toString().substr(2, 2));
-
 }
 
 
@@ -181,13 +190,16 @@ function collectmask(player, mask) {
     score += 10;
     scoreText.setText('♻️ points : ' + score);
 
-    if (score == 110) {
-        this.textGameOver.visible = true;
+    if (score == 120) {
+        //this.textGameOver.visible = true;
+        //scene.scene.stop();
         winText.visible = true;
-        scoreText.visible = false;
-        timerText.visible = false;
-        player.setTint(0xff0000);
-        player.anims.play('turn');
+        this.scene.pause();
+
+        //scoreText.visible = false;
+        //timerText.visible = false;
+        //player.setTint(0xff0000);
+        //player.anims.play('turn');
         this.gameOver = true;
     }
 
@@ -212,10 +224,10 @@ function startGame() {
 // End the game
 function killGame() {
     finishedGame = true;
-    player.setVelocity(0, 0);
+    //player.setVelocity(0, 0);
     //introText.visible = true;
 
-    scoreText.visible = false;
+    //scoreText.visible = false;
     //hitPointsText.visible = false;
 }
 
@@ -236,7 +248,7 @@ function onEvent() {
         textGameOver.visible = false;
     }
 
-    this.initialTime += 1;
+    this.initialTime += 01;
     timerText.setText('⏳ temps ' + formatTime(this.initialTime));
 
 }

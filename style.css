@@ -3,15 +3,3 @@ body {
     margin: 0;
     padding: 0;
 }
-.main-content {
-    height: 100vh;
-    width: 100%;
-}
-#canvas-container {
-    width: 100vw;
-    height: 100vh;
-    /*Flex-Container*/
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-}
