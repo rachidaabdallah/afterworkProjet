@@ -149,13 +149,6 @@ function create() {
     winText.visible = false;
     //winText.setDepth(1);
 //  Event handler for when the animation completes on our sprite
-
-this.physics.world.setBounds(0, 0, 4000, 1000);
-
-this.cameras.main.startFollow(player);
-
-this.cameras.main.setBounds(0, 0, 2000, 600);
-
 }
 
 function update() {
