@@ -45,7 +45,7 @@ sudo systemctl enable apache2
 Si le message « It works! » s'affiche, votre serveur est correctement installé. 
 (voir screenshot)
 
-<img src="/home/passerelle-numerique/Images/apach2.png" alt="apach2" style="zoom: 50%;" />
+<img src="assets/images/apach2.png" alt="apach2" style="zoom: 50%;" />
 
 Pour arrêter apache2 : 
 sudo systemctl stop apache2
