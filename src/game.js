@@ -23,9 +23,7 @@ var game = new Phaser.Game(config);
 
 var player;
 var masks;
-var bags;
 var platforms;
-var cursors;
 var score = 0;
 var gameOver;
 var scoreText;
@@ -204,4 +202,3 @@ function onEvent() {
     timerText.setText('⏳ temps ' + formatTime(this.initialTime));
 
 }
-
