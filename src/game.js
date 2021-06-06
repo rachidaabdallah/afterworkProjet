@@ -10,8 +10,8 @@ var config = {
         }
     },
     scale: {
-        mode: Phaser.Scale.RESIZE,
-        //parent: 'phaser-example',
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: {
         preload: preload,
@@ -66,19 +66,19 @@ function create() {
 
     this.add.image(500, 400, 'sky');
     platforms = this.physics.add.staticGroup();
-    platforms.create(650, 780, 'groundBase').setScale(1).refreshBody();
+    platforms.create(650, 760, 'groundBase').setScale(1).refreshBody();
     //platforms.create(550, 490, 'ground');
     platforms.create(90, 250, 'ground');
     //platforms.create(50, 500, 'brick-1');
     //platforms.create(900, 220, 'ground');
     platforms.create(1100, 220, 'ground');
     //platforms.create(1250, 180, 'obstacle-2');
-    platforms.create(320, 720, 'obstacle-1');
+    platforms.create(220, 700, 'obstacle-1');
     platforms.create(550, 490, 'brick-2');
     platforms.create(750, 290, 'brick-3');
     //platforms.create(100, 600, 'obstacle-3');
     //platforms.create(50, 499, 'obstacle-4');
-    platforms.create(1200, 720, 'trashcan');
+    platforms.create(600, 720, 'trashcan');
 
 
 
