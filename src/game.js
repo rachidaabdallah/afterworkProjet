@@ -47,52 +47,66 @@ function preload() {
     this.load.image('sky', '/assets/images/city.png');
     this.load.image('groundBase', '/assets/images/platform-base.png');
     this.load.image('ground', '/assets/images/platform.png');
-    this.load.image('platformAir', '/assets/images/platform-air.png');
+    this.load.image('brick-1', '/assets/images/platform-1brick.png');
+    this.load.image('brick-2', '/assets/images/platform-2brick.png');
+    this.load.image('brick-3', '/assets/images/platform-3brick.png');
+    this.load.image('trashcan', '/assets/images/trashcan.png');
+    this.load.image('obstacle-1', '/assets/images/obstacle-1.png');
+    this.load.image('obstacle-2', '/assets/images/obstacle-2.png');
+    this.load.image('obstacle-3', '/assets/images/obstacle-3.png');
+    this.load.image('obstacle-4', '/assets/images/obstacle-4.png');
     this.load.image('trashcan', '/assets/images/trashcan.png');
     this.load.image('win', '/assets/images/win.png');
-    this.load.image('mask1', '/assets/images/mask1.png');
-    this.load.image('bags', '/assets/images/plastic-bag.png');
-    this.load.image('mask', '/assets/images/mask.png');
-    this.load.spritesheet('dude', '/assets/images/dudek1.png',
+    this.load.image('mask', '/assets/images/plastic-bottle.png');
+    this.load.spritesheet('girl', '/assets/images/girl.png',
         { frameWidth: 72, frameHeight: 95 });
 }
 
 function create() {
 
     this.add.image(500, 400, 'sky');
-
     platforms = this.physics.add.staticGroup();
     platforms.create(650, 780, 'groundBase').setScale(1).refreshBody();
-    platforms.create(550, 490, 'ground');
-    platforms.create(50, 250, 'ground');
-    //platforms.create(50, 500, 'platformAir');
+    //platforms.create(550, 490, 'ground');
+    platforms.create(90, 250, 'ground');
+    //platforms.create(50, 500, 'brick-1');
     //platforms.create(900, 220, 'ground');
-    platforms.create(900, 220, 'ground');
-    platforms.create(750, 720, 'trashcan');
+    platforms.create(1100, 220, 'ground');
+    //platforms.create(1250, 180, 'obstacle-2');
+    platforms.create(320, 720, 'obstacle-1');
+    platforms.create(550, 490, 'brick-2');
+    platforms.create(750, 290, 'brick-3');
+    //platforms.create(100, 600, 'obstacle-3');
+    //platforms.create(50, 499, 'obstacle-4');
+    platforms.create(1200, 720, 'trashcan');
 
-    player = this.physics.add.sprite(200, 420, 'dude');
-    player.setBounce(0.2);
+
+
+
+    player = this.physics.add.sprite(200, 420, 'girl');
+    player.setBounce(0.1);
     player.setOrigin(0.5, 1);
     player.setScale(1.3);
-    player.body.setGravityY(100);
+    player.body.setGravityY(50);
+    player.body.setVelocityY(150);
     player.setCollideWorldBounds(true);
 
     this.anims.create({
         key: 'left',
-        frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
+        frames: this.anims.generateFrameNumbers('girl', { start: 0, end: 3 }),
         frameRate: 10,
         repeat: -1
     });
 
     this.anims.create({
         key: 'turn',
-        frames: [{ key: 'dude', frame: 4 }],
+        frames: [{ key: 'girl', frame: 4 }],
         frameRate: 20
     });
 
     this.anims.create({
         key: 'right',
-        frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
+        frames: this.anims.generateFrameNumbers('girl', { start: 5, end: 8 }),
         frameRate: 10,
         repeat: -1
     });
@@ -149,7 +163,7 @@ function update() {
     }
 
     if (cursors.up.isDown && player.body.touching.down) {
-        player.setVelocityY(-330);
+        player.setVelocityY(-280);
     }
 }
 
@@ -159,7 +173,7 @@ function collectmask(player, mask) {
     score += 10;
     scoreText.setText('♻️ points : ' + score);
 
-    if (score == 100) {
+    if (score == 70) {
         winText.visible = true;
         this.scene.pause();
         this.gameOver = true;
