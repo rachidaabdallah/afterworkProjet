@@ -34,25 +34,13 @@ var textGameOver;
 var timedEvent;
 var gameStarted;
 var finishedGame;
-//var dudito;
 
-/*function gameScene() {
-    this.score = 0;
-    this.gameOver = false;
-}*/
 
 function preload() {
     this.load.image('sky', '/assets/images/city.png');
     this.load.image('groundBase', '/assets/images/platform-base.png');
     this.load.image('ground', '/assets/images/platform.png');
-    this.load.image('brick-1', '/assets/images/platform-1brick.png');
-    this.load.image('brick-2', '/assets/images/platform-2brick.png');
-    this.load.image('brick-3', '/assets/images/platform-3brick.png');
     this.load.image('trashcan', '/assets/images/trashcan.png');
-    this.load.image('obstacle-1', '/assets/images/obstacle-1.png');
-    this.load.image('obstacle-2', '/assets/images/obstacle-2.png');
-    this.load.image('obstacle-3', '/assets/images/obstacle-3.png');
-    this.load.image('obstacle-4', '/assets/images/obstacle-4.png');
     this.load.image('trashcan', '/assets/images/trashcan.png');
     this.load.image('win', '/assets/images/win.png');
     this.load.image('mask', '/assets/images/plastic-bottle.png');
@@ -65,17 +53,10 @@ function create() {
     this.add.image(500, 400, 'sky');
     platforms = this.physics.add.staticGroup();
     platforms.create(650, 760, 'groundBase').setScale(1).refreshBody();
-    //platforms.create(550, 490, 'ground');
+    platforms.create(550, 490, 'ground');
     platforms.create(90, 250, 'ground');
-    //platforms.create(50, 500, 'brick-1');
-    //platforms.create(900, 220, 'ground');
+    platforms.create(900, 220, 'ground');
     platforms.create(1100, 220, 'ground');
-    //platforms.create(1250, 180, 'obstacle-2');
-    platforms.create(220, 700, 'obstacle-1');
-    platforms.create(550, 490, 'brick-2');
-    platforms.create(750, 290, 'brick-3');
-    //platforms.create(100, 600, 'obstacle-3');
-    //platforms.create(50, 499, 'obstacle-4');
     platforms.create(600, 720, 'trashcan');
 
 
@@ -109,13 +90,13 @@ function create() {
         repeat: -1
     });
 
-
+    
     cursors = this.input.keyboard.createCursorKeys();
 
     masks = this.physics.add.group({
         key: 'mask', 
-        repeat: 10,
-        setXY: { x: 40, y: 0, stepX: 200 }
+        repeat: 9,
+        setXY: { x: 40, y: 0, stepX: 100 }
     });
 
     masks.children.iterate(function (child) {
@@ -165,26 +146,25 @@ function update() {
     }
 }
 
-
 function collectmask(player, mask) {
     mask.disableBody(true, true);
     score += 10;
     scoreText.setText('♻️ points : ' + score);
 
-    if (score == 70) {
+    if (score == 100) {
         winText.visible = true;
         this.scene.pause();
         this.gameOver = true;
     }
 
-    if (masks.countActive(true) === 0) {
+    /*if (masks.countActive(true) === 0) {
         masks.children.iterate(function (child) {
             child.enableBody(true, child.x, 0, true, true);
 
         });
 
         var x = (player.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-    }
+    }*/
 }
 
 function formatTime(seconds) {
