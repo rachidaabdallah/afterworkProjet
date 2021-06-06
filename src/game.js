@@ -34,12 +34,7 @@ var textGameOver;
 var timedEvent;
 var gameStarted;
 var finishedGame;
-//var dudito;
 
-/*function gameScene() {
-    this.score = 0;
-    this.gameOver = false;
-}*/
 
 function preload() {
     this.load.image('sky', '/assets/images/city.png');
@@ -164,7 +159,6 @@ function update() {
         player.setVelocityY(-280);
     }
 }
-
 
 function collectmask(player, mask) {
     mask.disableBody(true, true);
