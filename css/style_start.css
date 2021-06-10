@@ -11,7 +11,7 @@ body {
 h1{
     color: rgb(21, 21, 82);
     font-size:25px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
     margin-top:20px;
     text-align: center;
 }
@@ -45,9 +45,9 @@ nav.navbar.bg-success{
         background-size: 100%;
         display: flex;
         justify-content: center;
-        left: 330px;
+        left: 410px;
         position: relative;
-        width: 40%;
+        width: 25%;
 }
 
 
