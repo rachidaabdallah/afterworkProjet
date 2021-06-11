@@ -1,79 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- Webpage Title -->
+    <title>Sauve la planéte - Le jeu faite par les apprenants de Passerelle Numérique promo 7 🌍 ♻️</title>
+    
+    <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/css/bootstrap.css" rel="stylesheet">
+    <link href="css/netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/css/fontawesome-all.css" rel="stylesheet">
+	<link href="css/css/styles.css" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style_start.css">
-    <script src="https://kit.fontawesome.com/c35b36b880.js" crossorigin="anonymous"></script>
-
-    <title>Save the planète </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"> 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="assets/imageslp/favicon.png">
 </head>
-<body>
-<nav class="navbar bg-primary" style="height: 60px; align-content:center;">
-    <a class="navbar-brand" href="start.html">
-      <img src="/assets/images/planete.png" width="60" height="60" alt="">
-      Save the world !
-    </a>
-    <div class="navbar navbar-expand-lg navbar-light bg-primary">
-        <div class="collapse navbar-collapse" >
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#describe">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="rules.html">Rules</a>
-            </li>
-            </ul>
-        </div>
-    </div>
-</nav>
 
-<div class="container">
-    <h1 id="home"> Welcome !</h1>  
-    <img src="assets/images/girl-world.png" class="background" alt="">  
-    <div class="row">
-        <div class="col-12 text-center">
-            <button class="btn "style="margin-top: -600px;">
-                <a class="btn" href="rules.html"> Go </a>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <div class="container">
+        
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="assets/imageslp/logo-planet.png" alt="alternative"></a> 
+
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
             </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" style="
+                        font-size: 15px;" href="#header">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" style="
+                        font-size: 15px;" href="#howtoplay">Commment jouer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" style="
+                        font-size: 15px;" href="#technologies">Technologies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" style="
+                        font-size: 15px;" href="#team">L'équipe</a>
+                    </li>
+                </ul>
+                    
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <h1 class="h1-large">Make the planet great again </h1>
+                        <p class="p-large">Nettoyez la planete en évitant le plus célèbre pollueur de la terre </p>
+                        <a class="btn-solid-lg" href="rules.html">Jouer maintenant</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-7">
+                    <div class="image-container">
+                        <img class="img-fluid" src="assets/imageslp/header3.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+        <!-- Details 1 -->
+    <div id="howtoplay" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="intro">
+                        <h2>Comment jouer ?</h2>
+                        <p>Ce jeu de platforme consiste a nettoyer la planete en évitant le plus célèbre pollueur de la terre !
+                            <br>Pour sauver la planète il faut :
+                            Ramasser un maximum de bouteilles, tout en évitant l'enemie, si vous êtes en contact avec lui alors c'est lui qui gagne !</p>
+                    </div> <!-- end of intro -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="image-container" style="
+                    margin-left: 96PX;">
+                        <img class="img-fluid" src="assets/imageslp/header1.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <div class="section-title">Step 1</div>
+                        <h2>Utilise les flèches directionnelles et la touche espace, pour que Sally bouge ! </h2>
+                        <!--<a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox">Lightbox</a>-->
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of details 1 -->
+    <!-- Details 2 -->
+    <div class="basic-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 second-step" style="
+                margin-left: 8rem;">
+                    <div class="text-container">
+                        <div class="section-title">Step 2</div>
+                        <h2>Rammase toutes les bouteilles en plastic dans la ville</h2>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-5">
+                    <div class="image-container" style="
+                    margin-right: 96px;">
+                        <img class="img-fluid" style="
+                        margin-top: 10rem;" src="assets/imageslp/plastic-bottles.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-3 -->
+    <!-- end of details 2 -->
+
+    <!-- Details 3 -->
+    <div class="basic-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="image-container" style="
+                    margin-right: 96PX;">
+                        <img class="img-fluid" style="margin-left: 10rem;margin-top: 7rem;" src="assets/imageslp/trump_iddle.png" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-5">
+                    <div class="text-container">
+                        <div class="section-title">Step 3</div>
+                        <h2>Evite Trump</h2>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-4 -->
+    <!-- end of details 3 -->
+</div> 
+
+          <!-- Tecnologies used -->
+        <div id="technologies" class="container mt-5 technologies">
+            <div class="row">
+                <div class="col-12 mx-auto  justify-content-center">
+                    <h3 class="text-center mx-auto my-5">Technologies utilisées</h3>
+                    <div class="row mx-auto justify-content-center my-5">
+                                <div class="col-3 logo">
+                                    <img class="img-fluid" style="margin-left: 46px; margin-top: 1px;" src="assets/imageslp/phaser-logo.png" alt="alternative">
+                                </div>
+                                <div class="col-3 logo">
+                                    <img class="img-fluid" style="
+                                    margin-top: 6px;"  src="assets/imageslp/js.png" alt="alternative">
+                                </div>
+                                <div class="col-3 logo">
+                                    <img class="img-fluid" src="assets/imageslp/html.png" alt="alternative">
+                                </div>
+                                <div class="col-3 logo">
+                                    <img class="img-fluid" style="
+                                    margin-top: 7px;" src="assets/imageslp/css.png" alt="alternative">
+                                </div>
+                    <!-- end of image slider -->
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row" id="describe">
-        <div class="col-12">
-        <p>Ce jeu de platforme consiste a nettoyer la planete en évitant le plus célèbre pollueur de la terre ! </p>
-        <p>Il faut : <br>
-        Ramasser un maximum de bouteilles, tout en évitant l'ennemie,
-        si vous êtes en contact avec lui alors c'est lui qui gagne !!!</p>
-        </div>
-    </div>
-</div>
+    <!-- Newsletter -->
+	<div class="form-1">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading my-2">Commence à jouer </h2>
+                    <p class="p-heading my-2">Évitez Trump et recyclez pour aider la planète ! </p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                        <div class="play col my-5">
+                            <a class="btn-solid-lg" href="rules.html">Jouer </a>
+                        </div>
+                        <div>   
+                            <img class="character" style="position:relative; top: -14px;right: 153px;" 
+                            src="assets/imageslp/character.png" alt="">
+                        </div>
+        
+                    <!-- end -->
+    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->
+    <!-- end  -->
 
-<footer class="bg-light">
-    <div class="container py-2">
-        <div class="row py-4">
-            
-<div class="col-lg-12 col-md-6 mb-4 mb-lg-0">
-    <p class="font-italic text-muted"> Projet AfterWork dans le cadre de la formation Passerelle Numérique, Centrale Marseille, créer par <a href="https://github.com/mafemont16">Maria Montagu</a>, <a href="https://github.com/fredmad">Fred Madani</a> et <a href="https://github.com/rachidaabdallah">Rachida Abdallah</a>
-    </p>
-</div>
+    <!-- Start of  the team section -->
+    <div id="team" class="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="h2-heading my-5 text-center mx-auto">Notre équipe</h2>
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+                            
+            <div class="row text-center"> 
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <img class="img-team" alt="team-photo" src="assets/imageslp/maria.png" width="99%"> 
+                    <div class="team-member">
+                        <h4>Maria Montagu</h4>
+                        <p>Développeuse web</p>
+                        </div>
+                        <p class="social">
+                        <a href="https://github.com/mafemont16"><span class="fa fa-github-square"></span></a>
+                        <a href="https://www.linkedin.com/in/mariafmontagu/"><span class="fa fa-linkedin-square"></span></a>
+                        <a href="https://mafemont16.github.io/portfolio/"><span class="fa fa-briefcase"></span></a>
+                       </p>		    					    				
+                        </div> 
+                        
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                       <img class="img-team" alt="team-photo" src="assets/imageslp/fred.png" width="100%">
+                       
+                       <div class="team-member">
+                           <h4>Fred Madani</h4>
+                           <p>Développeur web</p>
+                       </div>
+                       
+                       <p class="social">
+                        <a href="https://github.com/fredmad"><span class="fa fa-github-square"></span></a>
+                        <a href="https://www.linkedin.com/in/fred-madani/"><span class="fa fa-linkedin-square"></span></a>
+                        <a href="https://fredmad.github.io/portfolio/"><span class="fa fa-briefcase"></span></a>
+                       </p>	    					    				
+                 </div> 
+                        
+                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                       <img class="img-team" alt="team-photo" src="assets/imageslp/rachida.png" width="99%"> 
+                       
+                       <div class="team-member">
+                           <h4>Rachida Adballah</h4>
+                           <p>Développeuse web</p>
+                       </div>
+                       
+                       <p class="social">
+                        <a href="https://github.com/rachidaabdallah"><span class="fa fa-github-square"></span></a>
+                        <a href="https://www.linkedin.com/in/rachida-abdallah/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAC-2Yz8BAxE-9WoYpmVF6UOF2YZndDcrT9A"><span class="fa fa-linkedin-square"></span></a>
+                        <a href="https://rachidaabdallah.github.io/portfolio/"><span class="fa fa-briefcase"></span></a>
+                       </p>	    					    				
+                </div>  
+            </div>  
+        </div>    
     </div>
-</div>
-<!-- Copyrights -->
-<div class="bg-primary py-4">
-    <div class="container text-center">
-        <p class="mb-0 py-2 text-center"> © 2021 Save the World : All rights reserved.</p>
-    </div>
-</div>
-</footer>
+      <!-- End of  the team section -->
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h6>À propos</h6>
+                        <p class="p-small">Projet AfterWork dans le cadre de la formation Passerelle Numérique (École Centrale Marseille)</p>
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+    
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2021 <a href="#your-link">Sauve la planète</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+  
+    
+    	
+    <!-- Scripts -->
+    <script src="src/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="src/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="src/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="src/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="src/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="src/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-
 </html>
